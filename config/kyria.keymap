@@ -9,7 +9,6 @@
 
 #define DEFAULT 0
 #define LOWER   1
-#define RAISE   2
 
 / {
 	keymap {
@@ -20,21 +19,21 @@
 // |  ` ~  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   |   \  |
 // | BKSPC |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   | ESC  |
 // | None  |  Z  |  X  |  C   |  D   |  V   |  L CTRL |  SPACE  |  |    5    |   TAB   |  K   |  H    |  ,    |  .   |   /   | RET  |
-//                     | CAPS | LGUI | LALT |   None  |  SPACE  |  |  SHIFT  |     2   |  0   |   1   |   4   |
+//                     | CAPS | LGUI | LALT |   None  |  SPACE  |  |  SHIFT  |   None  |  0   |   1   |   4   |
 			bindings = <
 	&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
 	&kp BSPC  &kp A &kp R &kp S &kp T &kp G                                                 &kp M &kp N  &kp E     &kp I   &kp O    &kp ESC
-	&none     &kp Z &kp X &kp C &kp D &kp V &kp LCTRL &kp SPACE        &kp N5     &kp TAB   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
-	                &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE     &kp LSHFT  &kp N2    &kp N0 &kp N1 &kp N4
+	&none     &kp Z &kp X &kp C &kp D &kp V &kp LCTRL &kp SPACE        &kp SQT     &kp TAB   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
+	                &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE     &kp LSHFT  &none     &kp K_COPY &kp K_PASTE  &kp PSCRN
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
 		};
 		lower {
 			bindings = <
-	&trans &trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
-	&trans &trans &trans &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &kp MINUS &kp EQUAL						&trans &kp N7 &kp N8 &kp N9 &kp N0 &trans
+	&trans &trans &trans &kp LBKT &kp RBKT &trans						&trans &kp N4 &kp N5 &kp N6 &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans			  &trans &trans &trans &kp N1 &kp N2 &kp N3 &trans &trans
 			     &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans
 			>;
 		};
