@@ -9,6 +9,7 @@
 
 #define DEFAULT 0
 #define LOWER   1
+#define UPPER   2
 
 / {
 	keymap {
@@ -24,7 +25,7 @@
 	&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
 	&kp BSPC  &kp A &kp R &kp S &kp T &kp G                                                 &kp M &kp N  &kp E     &kp I   &kp O    &kp ESC
 	&none     &kp Z &kp X &kp C &kp D &kp V &kp LCTRL &kp SPACE        &kp SQT     &kp TAB   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
-	                &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE     &kp LSHFT  &none     &kp K_COPY &kp K_PASTE  &kp PSCRN
+	                &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE     &kp LSHFT  &mo UPPER  &kp K_COPY &kp K_PASTE  &kp PSCRN
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -37,5 +38,14 @@
 			     &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans
 			>;
 		};
+		upper {
+			bindings = <
+	&trans &trans &trans &trans &trans &trans						&trans &trans &trans &trans &trans &trans
+	&trans &trans &trans &trans &trans &trans						&kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+	&trans &trans &trans &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans &trans &trans &trans
+			     &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans
+			>;
+		};
+
 	};
 };
