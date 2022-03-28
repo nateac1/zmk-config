@@ -10,6 +10,7 @@
 #define DEFAULT 0
 #define LOWER   1
 #define UPPER   2
+#define GAME	3
 
 / {
 	keymap {
@@ -19,12 +20,12 @@
 // ---------------------------------------------------------------------------------------------------------------------------------
 // |  ` ~  |  Q  |  W  |  F   |  P   |  B   |                                          |  J   |  L    |  U    |  Y   |   ;   |   \  |
 // | BKSPC |  A  |  R  |  S   |  T   |  G   |                                          |  M   |  N    |  E    |  I   |   O   | ESC  |
-// | None  |  Z  |  X  |  C   |  D   |  V   |  L CTRL |  SPACE  |  |    5    |   TAB   |  K   |  H    |  ,    |  .   |   /   | RET  |
+// | Game  |  Z  |  X  |  C   |  D   |  V   |  L CTRL |  SPACE  |  |   ' "   |   TAB   |  K   |  H    |  ,    |  .   |   /   | RET  |
 //                     | CAPS | LGUI | LALT |   None  |  SPACE  |  |  SHIFT  |   None  |  0   |   1   |   4   |
 			bindings = <
 	&kp GRAVE &kp Q &kp W &kp F &kp P &kp B                                                 &kp J &kp L  &kp U     &kp Y   &kp SEMI &kp BSLH
 	&kp BSPC  &kp A &kp R &kp S &kp T &kp G                                                 &kp M &kp N  &kp E     &kp I   &kp O    &kp ESC
-	&none     &kp Z &kp X &kp C &kp D &kp V &kp LCTRL &kp SPACE        &kp SQT     &kp TAB   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
+	&tog GAME &kp Z &kp X &kp C &kp D &kp V &kp LCTRL &kp SPACE        &kp SQT     &kp TAB   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET
 	                &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE     &kp LSHFT  &mo UPPER  &kp K_COPY &kp K_PASTE  &kp PSCRN
 			>;
 
@@ -46,6 +47,13 @@
 			     &trans &trans &trans &trans &trans			  &trans &trans &trans &trans &trans
 			>;
 		};
-
+		game {
+			bindings = <
+	&kp GRAVE &kp Q &kp W &kp E &kp R &kp T						&kp U &kp I &kp O &kp P &kp LBKT &kp RBKT
+	&kp BSPC &kp LSHFT &kp A &kp W &kp D &kp G						&trans &trans &trans &trans &trans &trans
+	&tog GAME &kp Z &kp X &kp S &kp C &kp V &kp LCTRL &kp SPACE			  &trans &trans &trans &trans &trans &trans &trans &trans
+			     &kp CAPS &kp LGUI &kp LALT &mo LOWER &kp SPACE			  &trans &trans &trans &trans &trans
+			>;
+		};
 	};
 };
